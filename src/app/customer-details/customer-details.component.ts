@@ -21,9 +21,10 @@ export class CustomerDetailsComponent implements OnInit {
     this.getCustomer();
   }
 
-  getCustomer(){
+  getCustomer() {
     this.customerService.getCustomer(this.customerId)
-    .subscribe((data: Customer) => {this.customer = data;}),
+    .subscribe((data: Customer) => {this.customer = data; },
+    );
   }
 
 }

@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class CustomerComponent implements OnInit {
 
   customers: Customer[];
-  displayedColumns: string[] = ['first name', 'last name', 'city', 'country', 'actions']
+  displayedColumns: string[] = ['first name', 'last name', 'city', 'country', 'actions'];
   constructor(private customerService: CustomerService, private router: Router) { }
 
   ngOnInit() {
