@@ -5,4 +5,8 @@
         <span class="fill-remaining-space"></span>
     </mat-toolbar>
 </div>
-<app-customer></app-customer>
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+        <mat-button-toggle value="bold" routerLink="/customers">Customers</mat-button-toggle>
+        <mat-button-toggle value="bold" routerLink="/invoices">Invoices</mat-button-toggle>
+      </mat-button-toggle-group>
+<router-outlet></router-outlet>

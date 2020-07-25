@@ -1,11 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
-import { CustomerComponent } from './customers/customer/customer.component';
 import { CustomerService } from './services/customer.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CustomerDetailsComponent } from './customer-details/customer-details.component';
@@ -13,15 +12,16 @@ import { CustomerDetailsComponent } from './customer-details/customer-details.co
 @NgModule({
    declarations: [
       AppComponent,
-      CustomerComponent,
-      CustomerDetailsComponent
+      CustomerDetailsComponent,
+      routingComponents
    ],
    imports: [
       BrowserModule,
       AppRoutingModule,
       BrowserAnimationsModule,
       MaterialModule,
-      HttpClientModule
+      HttpClientModule,
+      AppRoutingModule
    ],
    providers: [
       CustomerService
