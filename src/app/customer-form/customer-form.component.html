@@ -1,0 +1,51 @@
+<mat-grid-list cols="1" rowHeight="3:1">
+  <mat-grid-tile>
+    <form [formGroup]="createCustomerForm" (ngSubmit)="AddCustomer()">
+      <h2 class="text-center text-primary">Create New Customer</h2>
+      <hr />
+      <!-- firstName -->
+      <div class="form-group">
+        <input type="text" [ngClass]="{
+            'is-invalid':
+              createCustomerForm.get('firstName').errors &&
+              createCustomerForm.get('firstName').touched
+          }" class="form-control" formControlName="firstName" placeholder="FirstName" />
+        <div class="invalid-feedback">Please choose a first name</div>
+      </div>
+    
+      <!-- lastName -->
+      <div class="form-group">
+        <input type="text" [ngClass]="{
+            'is-invalid':
+              createCustomerForm.get('lastName').errors &&
+              createCustomerForm.get('lastName').touched
+          }" class="form-control" formControlName="lastName" placeholder="LastName" />
+        <div class="invalid-feedback">Please choose a first name</div>
+      </div>
+    
+      <!-- city -->
+      <div class="form-group">
+        <input [ngClass]="{'is-invalid': createCustomerForm.get('city').errors && createCustomerForm.get('city').touched}"
+          class="form-control" placeholder="City" formControlName="city">
+        <div class="invalid-feedback"
+          *ngIf="createCustomerForm.get('city').touched && createCustomerForm.get('city').hasError('required')">City is required</div>
+      </div>
+    
+      <!-- country -->
+      <div class="form-group">
+        <input [ngClass]="{'is-invalid': createCustomerForm.get('country').errors && createCustomerForm.get('country').touched}"
+          class="form-control" placeholder="Country" formControlName="country">
+        <div class="invalid-feedback"
+          *ngIf="createCustomerForm.get('country').touched && createCustomerForm.get('country').hasError('required')">Country is
+          required</div>
+      </div>
+      <!-- Cancel -->
+      <div class="form-group text-center">
+        <button class="btn btn-success" [disabled]="!createCustomerForm.valid" type="submit">Create</button>
+        <button class="btn btn-default" type="button" (click)="cancel()">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </mat-grid-tile>
+</mat-grid-list>

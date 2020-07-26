@@ -8,12 +8,15 @@ import { MaterialModule } from './material.module';
 import { CustomerService } from './services/customer.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CustomerDetailsComponent } from './customer-details/customer-details.component';
+import { CustomerFormComponent } from './customer-form/customer-form.component';
+import { ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
    declarations: [
       AppComponent,
       CustomerDetailsComponent,
-      routingComponents
+      routingComponents,
+      CustomerFormComponent,
    ],
    imports: [
       BrowserModule,
@@ -21,7 +24,8 @@ import { CustomerDetailsComponent } from './customer-details/customer-details.co
       BrowserAnimationsModule,
       MaterialModule,
       HttpClientModule,
-      AppRoutingModule
+      AppRoutingModule,
+      ReactiveFormsModule
    ],
    providers: [
       CustomerService

@@ -4,11 +4,11 @@ import { CustomerService } from 'src/app/services/customer.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-customer',
-  templateUrl: './customer.component.html',
-  styleUrls: ['./customer.component.css']
+  selector: 'app-customers-list',
+  templateUrl: './customers-list.component.html',
+  styleUrls: ['./customers-list.component.css']
 })
-export class CustomerComponent implements OnInit {
+export class CustomersListComponent implements OnInit {
 
   customers: Customer[];
   displayedColumns: string[] = ['first name', 'last name', 'city', 'country', 'actions'];
@@ -26,5 +26,10 @@ export class CustomerComponent implements OnInit {
 
   onClick(customer) {
     this.router.navigate(['/customers', customer.id]);
+  }
+
+  delete(customer) {
+    this.customerService.deleteCustomer(customer.id)
+    .subscribe(() => { console.log('Successfuly Deleted'); });
   }
 }

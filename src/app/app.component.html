@@ -1,12 +1,11 @@
-<div class ="container">
+<div class="container">
     <mat-toolbar>
         <span class="fill-remaining-space"></span>
         <span class="toolbar-text">Customers And Invoices Application</span>
         <span class="fill-remaining-space"></span>
     </mat-toolbar>
 </div>
-    <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-        <mat-button-toggle value="bold" routerLink="/customers">Customers</mat-button-toggle>
-        <mat-button-toggle value="bold" routerLink="/invoices">Invoices</mat-button-toggle>
-      </mat-button-toggle-group>
+<button mat-button color="primary" routerLink="/customers">Customers</button>
+<button mat-button color="primary" routerLink="/invoices">Invoices</button>
+<button mat-button color="primary" routerLink="/customers/add">Create New</button>
 <router-outlet></router-outlet>

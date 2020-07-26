@@ -1,3 +1,9 @@
-<p>
-  customer id {{customerId}}
-</p>
+<div class="card mb-4">
+  <div class="card-body p-1">
+    <h1 class="card-title text-center mb-1"><i class="fa fa-customer"></i>
+      {{customer.firstName}}, {{customer.lastName}}
+    </h1>
+    <p class="card-text text-muted text-center">{{customer.city}}</p>
+    <p class="card-text text-muted text-center">{{customer.country}}</p>
+  </div>
+</div>
