@@ -19,13 +19,17 @@
         <hr />
           <!-- invoice number -->
       <div class="form-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">#</div>
         <input type="text"  class="form-control" formControlName="invoiceNumber" placeholder="Invoice Number" />
-        <div class="invalid-feedback">Please choose a first name</div>
+        </div>
       </div>
       <!-- total -->
       <div class="form-group">
-        <input type="text"  class="form-control" formControlName="total" placeholder="Total" />
-        <div class="invalid-feedback">Please choose a first name</div>
+        <div class="input-group-prepend">
+          <div class="input-group-text">$</div>
+          <input type="text"  class="form-control" formControlName="total" placeholder="Total in USD" />
+        </div>
       </div>
       <button class="btn btn-success" [disabled]="!invoiceForm.valid" type="submit">Generate</button>
       </form>

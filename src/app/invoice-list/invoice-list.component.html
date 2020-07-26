@@ -7,12 +7,12 @@
 
   <ng-container matColumnDef="total">
       <mat-header-cell *matHeaderCellDef> Total </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.total}} </mat-cell>
+      <mat-cell *matCellDef="let element"> {{element.totalToDisplay}} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="customer">
       <mat-header-cell *matHeaderCellDef> Customer </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.customerName}} </mat-cell>
+      <mat-cell *matCellDef="let element"> {{element.fullName}} </mat-cell>
   </ng-container>
 <ng-container matColumnDef="loading">
 <mat-footer-cell *matFooterCellDef colspan="6">
