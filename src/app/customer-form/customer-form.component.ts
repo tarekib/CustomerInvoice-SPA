@@ -9,7 +9,6 @@ import { Customer } from '../Models/Customer';
   styleUrls: ['./customer-form.component.css']
 })
 export class CustomerFormComponent implements OnInit {
-  @Output() cancelRegister = new EventEmitter();
   createCustomerForm: FormGroup;
   customer: Customer;
   constructor(private fb: FormBuilder, private customerService: CustomerService) { }
@@ -32,10 +31,5 @@ export class CustomerFormComponent implements OnInit {
       this.customer = Object.assign({}, this.createCustomerForm.value);
       this.customerService.addCustomer(this.customer).subscribe(() => { console.log('Success'); });
     }
-  }
-
-  cancel() {
-    this.cancelRegister.emit(false);
-    console.log('cancelled');
   }
 }
